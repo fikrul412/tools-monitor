@@ -1,7 +1,7 @@
 import type { ApiResponse } from '$lib/types';
 
 const GAS_ENDPOINT =
-	'https://script.google.com/macros/s/AKfycbxW4kpDYWUvwoc8Hvlw_z3w-7FR40GDYz1jglW_6XUnbKhD4py9zQ4vFAqx_at88Dr1xg/exec';
+	'https://script.google.com/macros/s/AKfycbwxxe-_yhaHfw8734Cn623PlpUiCzY0lesWNaNrUo6ZRwlunM91-YgODrqTYs6GN0anxw/exec';
 
 async function request<T>(
 	action: string,

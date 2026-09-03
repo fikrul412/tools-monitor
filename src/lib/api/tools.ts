@@ -1,6 +1,11 @@
 import { api } from '$lib/api/client';
 import type { Tool, ToolLog } from '$lib/types';
 
+// Fetch all tools
+export async function getTools(params?: Record<string, unknown>): Promise<Tool[]> {
+	return await api.get<Tool[]>('getTools', params);
+}
+
 // Fetch all tool logs
 export async function getToolLogs(params?: Record<string, unknown>): Promise<ToolLog[]> {
 	return await api.get<ToolLog[]>('getToolLogs', params);
@@ -11,7 +16,7 @@ export async function getToolLog(id: number | string): Promise<ToolLog> {
 	return await api.get<ToolLog>('getToolLog', { id });
 }
 
-// Update a log entry's status using 'setToolLog' action
+// Update a log entry's status
 export async function updateToolLogStatus(
 	id: number | string,
 	status: string
@@ -19,7 +24,7 @@ export async function updateToolLogStatus(
 	return await api.post<ToolLog>('setToolLog', { status }, { id });
 }
 
-// Update a tool's status using client.ts
+// Update a tool's status
 export async function updateToolStatus(
 	id: number | string,
 	status: string | number
